@@ -23,10 +23,17 @@ def register_user(L):
 
     utente_presente = False
     id_presente=False
-    
     id_presente = False
 
-# Genera un ID unico per l'utente
+    
+    while True:
+        if email.count("@")==1 and (email.count(".it") or email.count(".com"))==1:
+            print("Email valida")
+            break
+        else:
+            print("email non valida")
+            email=input("Inserisci la tua mail:")
+
     id_utente = random.choice("abcdefghijklmnopqrstuvwxyz") + str(random.randint(0, 100))
 
     for utente in L:
@@ -114,7 +121,7 @@ def delete_user(L):
                     print(Fore.BLACK+"Nome utente o password errati, riprova")
                     print(Fore.BLACK+"Ti restano:", tentativi-1, Fore.BLACK+" tentativi")
                     tentativi -= 1
-                    
+
         elif scelta2=="ID":
             nome = input(Fore.YELLOW+"ID: ")
             rem_pass = getpass.getpass(Fore.YELLOW+"Inserire la password per rimuovere l'utente:")
@@ -129,7 +136,6 @@ def delete_user(L):
                     print(Fore.BLACK+"Ti restano:", tentativi-1, Fore.BLACK+" tentativi")
                     tentativi -= 1
 
-
 def recover_password(L):
     rec_nick = input(Fore.YELLOW+"Inserisci il tuo nickname:")
     rec_email = input(Fore.YELLOW+"Inserisci la tua mail:")
@@ -139,4 +145,22 @@ def recover_password(L):
             utente["password"] = new_pass
             return
     print(Fore.RED+"Credenziali errate")
+
+
+#for utente in L:
+#   if utente["email"].count("@")==1
+#               
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 
