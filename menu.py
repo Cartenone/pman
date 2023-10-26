@@ -93,9 +93,9 @@ def login_user(L):
     for utente in L:
         if utente["nick"] == nick_log and utente["password"] == pass_log:
             print(Fore.GREEN+"Accesso effettuato con successo")
-            return
-
-    print(Fore.RED+"Nome utente o password errati")
+            calc()
+            break
+        print(Fore.RED+"Nome utente o password errati")
 
 def display_users(L):
     for utente in L:
@@ -146,21 +146,34 @@ def recover_password(L):
             return
     print(Fore.RED+"Credenziali errate")
 
+def calc():
+    clear_screen()
+    print("\n\n")
+    print(Fore.BLACK+"1]Calcola Area Quadrato:       ")
+    print(Fore.BLACK+"2]Calcola Area Triangolo:           ")
+    print(Fore.BLACK+"3]Calcola Area Rettangolo:")
+    
+    
+    scl=input("Scegli cosa calcolare:")
 
-#for utente in L:
-#   if utente["email"].count("@")==1
-#               
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
+    if scl=="1":
+        lato=int(input("Inserisci la misura del lato"))
+        area_q=lato*lato
+        print(f"Area quadrato:{area_q}")
+
+    elif scl=="2":
+        base=float(input("Inserisci la base:"))
+        h=float(input("Inserisci l'altezza:"))
+        area=(base*h)/2
+        print(f"Area triangolo:{area}")
+
+    elif scl=="3":
+        base=float(input("Inserisci la base:"))
+        h=float(input("Inserisci l'altezza:"))
+        area=(base*h)
+        print(f"Area quadrato:{area}")
+    elif scl=="4":
+        return
+
+        
 
